@@ -16,9 +16,11 @@ workflows:
       - terraform/fmt:
           checkout: true
           context: terraform
+          path: "./terraform"
       - terraform/validate:
           checkout: true
           context: terraform
+          path: "./terraform"
           requires:
             - terraform/fmt
       - terraform/plan:
@@ -35,4 +37,3 @@ workflows:
               only: master
           requires:
             - terraform/plan
-      working_directory: ./terraform
