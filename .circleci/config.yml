@@ -35,3 +35,4 @@ workflows:
               only: master
           requires:
             - terraform/plan
+      working_directory: ./terraform
