@@ -5,6 +5,6 @@ jobs:
       - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "hello world ${SHORT_GIT_HASH}" # run the `echo` command
+      - run: $SHORT_GIT_HASH
     environment:
       SHORT_GIT_HASH: $(echo $CIRCLE_SHA1 | cut -c -7)
